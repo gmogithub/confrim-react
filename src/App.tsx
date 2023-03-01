@@ -4,13 +4,15 @@ import { useConfirm } from "./components/confirm/v2/ConfirmContext";
 
 function App() {
   const [count, setCount] = useState(0);
-  const {confirm} = useConfirm();
+  const {confirm} = useConfirm( );
   async function increment() {
     if (await confirm({
       title: "Voulez-vous vraiment incrémenter ? ",
       content: "Voulez-vous vraiment effecturer cette action ?"
     })) {
       setCount(c => c + 1);
+    } else {
+
     }
   }
   console.log("render")
